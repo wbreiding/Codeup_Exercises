@@ -8,6 +8,9 @@ $endNumber = trim(fgets(STDIN));
 fwrite(STDOUT,'What increment would you like to count by (1,2,10,...): ');
 $increment = trim(fgets(STDIN));
 
+if ($increment == "") {
+  $increment = 1;
+}
 if (is_numeric($startNumber) && is_numeric($endNumber) && is_numeric($increment)){
   for ($i = $startNumber; $i <= $endNumber; $i+=$increment) {
     echo "{$i}\n";
