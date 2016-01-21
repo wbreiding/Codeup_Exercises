@@ -15,5 +15,7 @@ if (is_numeric($startNumber) && is_numeric($endNumber) && is_numeric($increment)
   for ($i = $startNumber; $i <= $endNumber; $i+=$increment) {
     echo "{$i}\n";
   }
+} else {
+  echo "You must enter numbers to play this game.\n";
 }
  ?>
