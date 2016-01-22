@@ -2,33 +2,50 @@
 
 function add($a, $b)
 {
+  if (is_numeric($a) && is_numeric($b)) {
     return $a + $b;
+  } else {
+    echo "All inputs must be numeric.\n";
+  }
 }
 
 function subtract($a, $b)
 {
-    // Add code here
+  if (is_numeric($a) && is_numeric($b)) {
     return $a - $b;
+  } else {
+    echo "All inputs must be numeric.\n";
+  }
 }
 
 function multiply($a, $b)
 {
-    // Add code here
+  if (is_numeric($a) && is_numeric($b)) {
     return $a * $b;
+  } else {
+    echo "All inputs must be numeric.\n";
+  }
 }
 
 function divide($a, $b)
 {
-    // Add code here
+  if (is_numeric($a) && is_numeric($b)) {
     return $a/$b;
+  } else {
+    echo "All inputs must be numeric.\n";
+  }
 }
 
 function modulus($a, $b) {
-  return $a%$b;
+  if (is_numeric($a) && is_numeric($b)) {
+    return $a%$b;
+  } else {
+    echo "All inputs must be numeric.\n";
+  }
 }
 
 // Add code to test your functions here
-$a = 10;
+$a = 15;
 $b = 5;
 echo "Addition: ";
 echo add($a,$b);
