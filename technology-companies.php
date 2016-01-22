@@ -45,5 +45,10 @@ $companies = [
     ]
 ];
 ksort($companies);
+foreach ($companies as $company => $employees) {
+  sort($employees);
+  //print_r($employees);
+  $companies[$company] = $employees;
+}
 print_r($companies);
 ?>
