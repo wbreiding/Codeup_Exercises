@@ -29,18 +29,18 @@ function multiply($a, $b)
 
 function divide($a, $b)
 {
-  if (is_numeric($a) && is_numeric($b)) {
+  if (is_numeric($a) && is_numeric($b) && $b != 0) {
     return $a/$b;
   } else {
-    echo "All inputs must be numeric.\n";
+    echo "All inputs must be numeric and the second number can not be 0.\n";
   }
 }
 
 function modulus($a, $b) {
-  if (is_numeric($a) && is_numeric($b)) {
+  if (is_numeric($a) && is_numeric($b) && $b != 0) {
     return $a%$b;
   } else {
-    echo "All inputs must be numeric.\n";
+    echo "All inputs must be numeric and the second number can not be 0.\n";
   }
 }
 
