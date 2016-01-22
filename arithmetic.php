@@ -5,7 +5,7 @@ function add($a, $b)
   if (is_numeric($a) && is_numeric($b)) {
     return $a + $b;
   } else {
-    echo "All inputs must be numeric.\n";
+    echo "{$a} and {$b} must be numeric.\n";
   }
 }
 
@@ -14,7 +14,7 @@ function subtract($a, $b)
   if (is_numeric($a) && is_numeric($b)) {
     return $a - $b;
   } else {
-    echo "All inputs must be numeric.\n";
+    echo "{$a} and {$b} must be numeric.\n";
   }
 }
 
@@ -23,7 +23,7 @@ function multiply($a, $b)
   if (is_numeric($a) && is_numeric($b)) {
     return $a * $b;
   } else {
-    echo "All inputs must be numeric.\n";
+    echo "{$a} and {$b} must be numeric.\n";
   }
 }
 
@@ -32,7 +32,7 @@ function divide($a, $b)
   if (is_numeric($a) && is_numeric($b) && $b != 0) {
     return $a/$b;
   } else {
-    echo "All inputs must be numeric and the second number can not be 0.\n";
+    echo "{$a} and {$b} must be numeric and the second number can not be 0.\n";
   }
 }
 
@@ -40,12 +40,12 @@ function modulus($a, $b) {
   if (is_numeric($a) && is_numeric($b) && $b != 0) {
     return $a%$b;
   } else {
-    echo "All inputs must be numeric and the second number can not be 0.\n";
+    echo "{$a} and {$b} must be numeric and the second number can not be 0.\n";
   }
 }
 
 // Add code to test your functions here
-$a = 15;
+$a = 10;
 $b = 5;
 echo "Addition: ";
 echo add($a,$b);
