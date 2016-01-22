@@ -50,5 +50,6 @@ foreach ($companies as $company => $employees) {
   //print_r($employees);
   $companies[$company] = $employees;
 }
+arsort($companies);
 print_r($companies);
 ?>
