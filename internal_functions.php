@@ -7,17 +7,25 @@ function inspect($var) {
   } elseif (is_float($var)) {
     echo "{$var} is a Float.\n";
   } elseif (is_bool($var)) {
-    echo "{$var} is a Boolean.\n";
-  } elseif (is_string($var)) {
-    echo "{$var} is a String.\n";
-  } elseif (is_null($var)) {
-    echo "{$var} is Null.\n";
-  } elseif (is_array($var)) {
-    echo "Array (";
-    foreach ($var as $val) {
-      echo "$val, ";
+    if ($var) {
+      echo "The Boolean value is TRUE.\n";
+    } else {
+      echo "The Boolean value is FALSE.\n";
     }
-    echo ")\n";
+  } elseif (is_string($var)) {
+    if (empty($var)) {
+      echo "The string is empty.\n";
+    } else {
+      echo "{$var} is a String.\n";
+    }
+  } elseif (is_null($var)) {
+    echo "The value is NULL.\n";
+  } elseif (is_array($var)) {
+    if (empty($var)) {
+      echo "The value is an empty array.\n";
+    } else {
+      echo "The value is an array.\n";
+    }
   } else {
     echo "I don't know what {$var} is.\n";
   }
