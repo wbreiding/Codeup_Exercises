@@ -18,4 +18,18 @@ $test2 = search($names, 'Bob');
 var_dump ($test1);
 var_dump ($test2);
 
+function compare($array1, $array2) {
+  $count = 0;
+  foreach ($array1 as $item) {
+    $result = array_search($item,$array2);
+    if (is_integer($result)) {
+      $count++;
+    }
+  }
+  return $count;
+}
+
+$test3 = compare($names, $compare);
+var_dump($test3);
+
 ?>
