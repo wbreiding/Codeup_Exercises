@@ -23,6 +23,10 @@ function divide($a, $b)
     return $a/$b;
 }
 
+function modulus($a, $b) {
+  return $a%$b;
+}
+
 // Add code to test your functions here
 $a = 10;
 $b = 5;
@@ -37,5 +41,8 @@ echo multiply($a,$b);
 echo PHP_EOL;
 echo "Division: ";
 echo divide($a,$b);
+echo PHP_EOL;
+echo "Modulus: ";
+echo modulus($a,$b);
 echo PHP_EOL;
 ?>
