@@ -2,13 +2,13 @@
 
 $names = ['Tina', 'Dana', 'Mike', 'Amy', 'Adam'];
 
-$compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
+$compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael','Jade'];
 
 function combine_arrays($array1, $array2) {
   $sameArray = compare($array1,$array2);
   $newArray = array();
   foreach ($array2 as $key=>$items) {
-      array_push($newArray, $array1[$key]);
+      if (!is_null($array1[$key])) {array_push($newArray, $array1[$key]);}
       foreach ($sameArray as $index) {
         if ($index == $key) {
           continue 2;
