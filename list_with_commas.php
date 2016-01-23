@@ -1,14 +1,21 @@
 <?php
-$physicistsString = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
+// Converts array into list n1, n2, ..., and n3
+function humanizedList($array) {
+  $last = array_pop($array);
+  $lastArray = explode(' ',$last);
+  array_shift($lastArray);
+  array_unshift($lastArray, ' and');
+  $last = implode(' ', $lastArray);
+  array_push($array, $last);
+  return implode(',', $array);
 
+}
+
+$physicistsString = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
 $physicistsArray = explode(',',$physicistsString);
-$lastPhysicist = array_pop($physicistsArray);
-$lastPhysicistArray = explode(' ',$lastPhysicist);
-array_shift($lastPhysicistArray);
-array_unshift($lastPhysicistArray, ' and');
-$lastPhysicist = implode(' ', $lastPhysicistArray);
-array_push($physicistsArray, $lastPhysicist);
-$famousFakePhysicists = implode(',', $physicistsArray);
+// Humanize that list
+ $famousFakePhysicists = humanizedList($physicistsArray);
+
 
 echo "Some of the most famous fictional theoretical physicists are {$famousFakePhysicists}.";
 
