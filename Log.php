@@ -2,19 +2,31 @@
 
   Class Log {
     public $filename;
+    public $handle;
 
-    public function logMessage($logLevel, $message) {
-
+    public function __construct($prefix='log') {
       date_default_timezone_set("America/Chicago");
       $dt = new DateTime();
-      $logDate = $dt->format('Y-m-d H:i:s');
+      $date = $dt->format('Y-m-d');
 
-      $handle = fopen($this->filename, 'a');
+      $this->filename = "{$prefix}-{$date}.log";
+      $this->handle = fopen($this->filename, 'a');
+
+    }
+
+    public function __destruct() {
+      fclose($this->handle);
+
+    }
+    public function logMessage($logLevel, $message) {
+      date_default_timezone_set("America/Chicago");
+      $dt = new DateTime();
+      $logDate = $dt->format('Y-m-d h:m:s');
+
       // do error messages here
       //YYYY-MM-DD HH:MM:SS [LEVEL] MESSAGE
       $msg = "{$logDate} [{$logLevel}] {$message}";
-      fwrite($handle, PHP_EOL . $msg);
-      fclose($handle);
+      fwrite($this->handle, PHP_EOL . $msg);
 
     }
 
