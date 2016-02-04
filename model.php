@@ -1,6 +1,7 @@
 <?php
 class Model {
   private $attributes = array();
+  protected static $table;
 
   public function __set($name, $value) {
         $this->attributes[$name] = $value;
@@ -8,6 +9,10 @@ class Model {
 
   public function __get($name) {
     return $this->attributes[$name];
+  }
+
+  public static function getTableName() {
+    return static::$table;
   }
 }
  ?>

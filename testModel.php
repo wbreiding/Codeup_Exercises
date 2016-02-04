@@ -1,5 +1,6 @@
 <?php
 require_once "model.php";
+require_once "user.php";
 
 $test = new Model();
 $test->name = 'Wendy';
@@ -12,4 +13,7 @@ echo $test->birthdate;
 echo "\n";
 echo $test->age;
 echo "\n";
+
+echo User::getTableName();
+
  ?>
