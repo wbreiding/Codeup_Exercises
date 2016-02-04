@@ -1,0 +1,4 @@
+
+2016-02-04 10:02:38 [INFO] This is an info level message
+2016-02-04 10:02:38 [ERROR] This is an error!
+2016-02-04 10:02:38 [WARNING] This is a warning message.
